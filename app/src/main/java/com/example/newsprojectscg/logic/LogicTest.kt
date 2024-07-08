@@ -28,9 +28,9 @@ class LogicTest : ComponentActivity() {
             val palindrome2 = "Level"
             val palindrome3 = "Hello"
 
-            isPalindrome(palindrome1.lowercase(Locale.getDefault()))
-            isPalindrome(palindrome2.lowercase(Locale.getDefault()))
-            isPalindrome(palindrome3.lowercase(Locale.getDefault()))
+            isPalindromeLogicBasic(palindrome1.lowercase(Locale.getDefault()))
+            isPalindromeLogicBasic(palindrome2.lowercase(Locale.getDefault()))
+            isPalindromeLogicBasic(palindrome3.lowercase(Locale.getDefault()))
 
 
             // triple array
@@ -53,6 +53,19 @@ fun findIndexMiddle(list: List<Int>) {
     } else {
         Log.d("EXAMPLE INDEX", "middle index is " + ((list.size / 2) + 1).toString())
     }
+}
+
+fun isPalindromeLogicBasic(str: String): String {
+    var start = 0
+    var end = str.length - 1
+    while (start < end) {
+        if (str[start] != str[end]) {
+            return "$str isn't a palindrome"
+        }
+        start++
+        end--
+    }
+    return "$str is a palindrome"
 }
 
 fun isPalindrome(str: String): String {
